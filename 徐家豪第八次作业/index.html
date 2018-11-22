@@ -1,90 +1,141 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8" />
 		<title></title>
+		<style>
+			#main {
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+			}
+			
+			#input_name_sex {
+				width: 600px;
+				height: 50px;
+				font-size: 24px;
+			}
+			
+			td {
+				width: 120px;
+				height: 50px;
+				border-collapse: collapse;
+				border: 1px solid #000000;
+				text-align: center;
+			}
+		</style>
 	</head>
-	<body><form name="myform"onclick="scr()">
-			姓名：
-			<input type="text" name="xingming" id="h1" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 性别： 男：
-			<input type="radio" name="sex" id="h2" value="男" /> 女：
-			<input type="radio" name="sex" id="h2" value="女" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form>	<button onclick="add()">增加</button><br><br>
-		
-		
-<table border="1" width="100%" height="200px" cellspacing="0"id="table1">
-			<tr>
-				<td>编号</td>
-				<td>姓名</td>
-				<td>性别</td>
-				<td>操作</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td id="demo1">张三</td>
-				<td>女</td>
-				<td><a href='#'onclick="del1()">删除</a></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>李四</td>
-				<td>女</td>
-				<td><a href='#' onclick="del2()">删除</a></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>王五</td>
-				<td>男</td>
-				<td><a href='#' onclick="del3()">删除</a></td>
-			</tr>
 
-		</table>
- <script>
- 	function add(){ 
- 		
- 		table = document.getElementById("table1");
-     oneRow = table.insertRow();//插入一行
-     cell1= oneRow.insertCell();//单单插入一行是不管用的，需要插入单元格
-     cell2=oneRow.insertCell();
-     cell3=oneRow.insertCell();
-     cell4=oneRow.insertCell();
-     cell1.innerHTML = ""; 
-     cell2.innerHTML= "不会了"; 
-     cell3.innerHTML= "就写了这么多"; 
-     cell4.innerHTML= "<a href='#'>删除</a>";}
-     function del1(){
-	var table=document.getElementById("table1");
-	var len=table.rows.length;
-	alert("确定要删除吗？qaq");table.deleteRow(len-4);
-	
-} function del2(){
-	var table=document.getElementById("table1");
-	var len=table.rows.length;alert("确定要删除吗？qaq");
-	table.deleteRow(len-3);
-} function del3(){
-	var table=document.getElementById("table1");
-	var len=table.rows.length;alert("确定要删除吗？qaq");
-	table.deleteRow(len-2);
-}
-function scr(){
-	var x=document.myform.xingming.value;
-	var y=document.myform.sex.value;
-	           
-}
+	<body>
+		<script>
+			function del1() {
+				var table = document.getElementById("table");
+				var len = table.rows.length;
+				alert("确定要删除吗？qaq");
+				table.deleteRow(len - 4);
 
-x=document.getElementById("demo1")  
-x.style.color="blue";           
-x=document.getElementById("demo2")  
-x.style.color="red";           
-x=document.getElementById("demo3")  
-x.style.color="red";           
-x=document.getElementById("demo4")  
-x.style.color="red";           
-x=document.getElementById("demo5")  
-x.style.color="red";
-x=document.getElementById("demo6")
-x.style.color="red";           
- </script>
+			}
+
+			function del2() {
+				var table = document.getElementById("table");
+				var len = table.rows.length;
+				alert("确定要删除吗？qaq");
+				table.deleteRow(len - 3);
+			}
+
+			function del3() {
+				var table = document.getElementById("table");
+				var len = table.rows.length;
+				alert("确定要删除吗？qaq");
+				table.deleteRow(len - 2);
+			}
+
+			function del(data) {
+
+				var tb = data.parentNode.parentNode;
+				tb.parentNode.removeChild(tb);
+			}
+
+			function changecolor1(ss) {
+
+				ss.style.color = "red";
+
+			}
+
+			function changecolor2(ss) {
+				ss.style.color = "black";
+			}
+			window.onload = function() {
+				var input_botton = document.getElementById("input");
+				var count = 3;
+				input_botton.onclick = function() {
+					count++;
+					var name = document.getElementById("name").value;
+					var sexs = document.getElementsByName("radio");
+					var table = document.getElementById("table");
+					var sex;
+					for(var i = 0; i <= 1; i++) {
+						if(sexs[i].checked == true) {
+							if(sexs[i].value == 0) sex = "男";
+							else sex = "女";
+							break;
+						}
+					}
+					var x = document.createElement("tr");
+					x.innerHTML = "<td>" + count + "</td>" + "<td id='zz" + count + "' onmouseover='changecolor1(this)' onmouseout='changecolor2(this)'>" + name + "</td>" + "<td>" + sex + "</td>" +
+						"<td><a id='XX" + count + "' href='#' onclick='del(this);'>删除</a></td>";
+					
+					table.appendChild(x);
+
+				}
+
+			}
+		</script>
+		<div id="main">
+			<div id="input_name_sex">
+				<span> 姓名：</span>
+				<input type="text" id="name" />
+				<span> 性别：</span> 男：
+				<input name="radio" type="radio" value="0" checked="checked" /> 女：
+				<input name="radio" type="radio" value="1" />
+				<button id="input">添加</button>
+			</div>
+			<table border="1" width="600px" height="200px" cellspacing="0" id="table">
+				<tr>
+					<td>编号</td>
+					<td>姓名</td>
+					<td>性别</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>张三</td>
+					<td>女</td>
+					<td>
+						<a href='#' onclick="del1()">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>女</td>
+					<td>
+						<a href='#' onclick="del2()">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+					<td>
+						<a href='#' onclick="del3()">删除</a>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+	</body>
 
 </html>
