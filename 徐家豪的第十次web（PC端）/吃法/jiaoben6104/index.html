@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title></title>
+
+<link rel="stylesheet" href="css/public.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery_flexslider.js"></script>
+
+</head>
+<body>
+<div class="about-history" id="fzlc">
+    <header class="about-title title-white">
+        <h3 class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">一分钟吃法</h3>
+        <p class="wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">ONEMINUTE</p>
+    </header>
+    <div class="about-history-list wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">		
+        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+            <ul class="slides clearfix list" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>打开包装</h3>
+                        <div class="desc">
+                            <p>
+                            打开方便米粉包装，取出配料包。
+                            </p>
+                            <img src="../../style/img/01.gif">
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>加入料包</h3>
+                        <div class="desc">
+                            <p>
+                            将蔬菜包依次加入到方便碗中以待备用。
+                            </p>
+                            <img src="../../style/img/02.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>倒入开水</h3>
+                        <div class="desc">
+                            <p>倒入开水淹没米粉和蔬菜小料，并迅速盖上盖子。</p>
+                            <img src="../../style/img/08.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>等候片刻</h3>
+                        <div class="desc">
+                            <p>静静等待一分钟，米粉就泡好了。</p>
+                            <img src="../../style/img/03.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>加入牛肉酱</h3>
+                        <div class="desc">
+                            <p>将开水倒出，加入秘制牛肉酱。</p>
+                            <img src="../../style/img/04.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>加黄豆包</h3>
+                        <div class="desc">
+                            <p>最后加入酥脆诱人的黄豆料包。</p>
+                            <img src="../../style/img/05.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>充分搅拌</h3>
+                        <div class="desc">
+                            <p>酱香味满满的牛肉酱与米粉充分搅拌。</p>
+                            <img src="../../style/img/06.gif" />
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>大功告成</h3>
+                        <div class="desc">
+                            <p>一碗美味纯正的酱香米粉就此诞生啦！</p>
+                            <img src="../../style/img/09.gif" />
+                        </div>
+                    </div>
+                </li>
+                 <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>返回</h3>
+                        <div class="desc">
+                            <p><a href="../../产品中心.html">点此返回！</a></p>
+                            <img src="../../style/img/10.gif" />
+                        </div>
+                    </div>
+                </li>
+               
+<script>
+	$(function(){
+		if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+			//phone
+		}else{
+			//PC
+			$(".about-history-list").flexslider({animation:"slide",slideshow:false,controlNav:false,itemWidth:253,itemMargin:31,prevText:"<",nextText:">",move:1});
+		}
+	});
+</script>
+
+</div>
+</body>
+</html>

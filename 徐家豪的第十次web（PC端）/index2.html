@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="demo.css">
+
+</head>
+<body>
+	<h1 style="color: red;text-align: center;">关于我们</h1>
+<div id="wrap">
+	<ul>
+		<li>
+			<a href="" class="a1">
+				<img src="style/img/20171104202459_BjTCs.jpeg">
+				<div class ="divA">
+					<p class="p1">新疆约粉火爆来袭</p>
+					<p class="p2">我们是一家正儿八经做新疆米粉的公司。一群追求极致美味的米粉狂热者，除了想做一碗独具匠心的好米粉外，更致力于打造一个自宇宙大爆炸以来，新疆人引以为傲的良心米粉店。</p>
+					<p class="p3"><span>欧气</span></p>
+				</div>
+			</a>
+			<a href="" class = "a2">
+					<p class="p4">新疆约粉火爆来袭</p>
+					<p class="p5">我们是一家正儿八经做新疆米粉的公司。一群追求极致美味的米粉狂热者，除了想做一碗独具匠心的好米粉外，更致力于打造一个自宇宙大爆炸以来，新疆人引以为傲的良心米粉店。</p>
+				
+					<p class="p7">查看详情></p>
+			</a>
+		</li>
+		<li>
+			<a href="" class="a1">
+				<img src="style/img/20180402122700_ZeZiK.jpeg">
+				<div class ="divA">
+					<p class="p1">互联网餐饮的揭晓</p>
+					<p class="p2">执着于每一种原料，一粒花椒，一根米份，不忘初心，兑现和坚持工匠精神，对完美味道无限追寻。</p>
+					<p class="p3"><span>开心</span></p>
+				</div>
+			</a>
+			<a href="" class = "a2">
+					<p class="p4">互联网餐饮的揭晓</p>
+					<p class="p5">执着于每一种原料，一粒花椒，一根米份，不忘初心，兑现和坚持工匠精神，对完美味道无限追寻。</p>
+					
+					<p class="p7">查看详情></p>
+			</a>
+		</li>
+		<li>
+			<a href="" class="a1">
+				<img src="style/img/20180904155915_UAmwS.jpeg">
+				<div class ="divA">
+					<p class="p1">论新疆米粉的自我修养</p>
+					<p class="p2">餐饮业是一门简单粗暴的艺术，和舞蹈家在舞台上用身体征服看客一样，开门迎客的那一刻，就已经注定你与食客只有一碗之缘，行，流芳百世，回头一万次也不嫌多，否，直接打入冷宫，永生不得翻身，遗臭万年。</p>
+					<p class="p3"><span>快乐</span></p>
+				</div>
+			</a>
+			<a href="" class = "a2">
+					<p class="p4">论新疆米粉的自我修养</p>
+					<p class="p5">餐饮业是一门简单粗暴的艺术，和舞蹈家在舞台上用身体征服看客一样，开门迎客的那一刻，就已经注定你与食客只有一碗之缘，行，流芳百世，回头一万次也不嫌多，否，直接打入冷宫，永生不得翻身，遗臭万年。</p>
+					
+					<p class="p7">查看详情></p>
+			</a>
+		</li>
+		<li>
+			<a href="" class="a1">
+				<img src="style/img/20181004201604_fJUhi.jpeg">
+				<div class ="divA">
+					<p class="p1">约粉浅谈新疆特色</p>
+					<p class="p2">食”=“人”+“良”，这是老祖宗对我们所有食品生产者的告诫：做食品的人，必须讲良心，而这，亦是全体约粉 的道德底线，从业守则及理论基础。</p>
+					<p class="p3"><span>幸福</span></p>
+				</div>
+			</a>
+			<a href="" class = "a2">
+					<p class="p4">约粉浅谈新疆特色</p>
+					<p class="p5">食”=“人”+“良”，这是老祖宗对我们所有食品生产者的告诫：做食品的人，必须讲良心，而这，亦是全体约粉 的道德底线，从业守则及理论基础。</p>
+					
+					<p class="p7">查看详情></p>
+			</a>
+		</li>
+	</ul>
+</div>
+<script src="jquery/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$('li').mouseenter(function(){
+	$(this).find('.divA').stop().animate({bottom:'-66px'});
+	$(this).find('.a2').css({left:'0'})
+	$(this).children('.a2').find('.p4').css({left:'0'})
+	$(this).children('.a2').find('.p5').css({left:'0'})
+	$(this).children('.a2').find('.p6').css({transform:'scale(1)'})
+	$(this).children('.a2').find('.p7').css({bottom:'25px'})
+})
+$('li').mouseleave(function(){
+	$(this).find('.divA').stop().animate({bottom:'0px'});
+	$(this).find('.a2').css({left:-$(this).width()})
+	$(this).children('.a2').find('.p4').css({left:-$(this).width()})
+	$(this).children('.a2').find('.p5').css({left:-$(this).width()})
+	$(this).children('.a2').find('.p6').css({transform:'scale(1.3)'})
+	$(this).children('.a2').find('.p7').css({bottom:'-50px'})
+})
+</script>
+
+
+
+</body>
+</html>
